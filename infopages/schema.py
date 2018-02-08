@@ -1,0 +1,162 @@
+import colander
+
+
+# SciELO
+class OtherIssns(colander.SequenceSchema):
+    other_issn = colander.SchemaNode(colander.String())
+
+
+class AbstractLanguages(colander.SequenceSchema):
+    abstract_languages = colander.SchemaNode(colander.String())
+
+
+class ControlledVocabulary(colander.TupleSchema):
+    vocabulary = colander.SchemaNode(colander.String())
+    descriptor = colander.SchemaNode(colander.String())
+
+
+class EditorialStandard(colander.TupleSchema):
+    standard = colander.SchemaNode(colander.String())
+    descriptor = colander.SchemaNode(colander.String())
+
+
+class IndexCoverage(colander.SequenceSchema):
+    index_coverage = colander.NoneAcceptantNode(colander.String())
+
+
+class WosIndexes(colander.SequenceSchema):
+    wos_indexe = colander.SchemaNode(colander.String())
+
+
+class WosSubjectsAreas(colander.SequenceSchema):
+    wos_subject_area = colander.SchemaNode(colander.String())
+
+
+class Languages(colander.SequenceSchema):
+    language = colander.SchemaNode(colander.String())
+
+
+# class Mission(colander.MappingSchema):
+#     language = colander.SchemaNode(
+#         colander.String(),
+#         validator=colander.OneOf(['pt', 'en', 'es']))
+#     descriptor = colander.SchemaNode(colander.String())
+
+
+class Mission(colander.MappingSchema):
+    pt = colander.SchemaNode(colander.String())
+    es = colander.SchemaNode(colander.String())
+    en = colander.SchemaNode(colander.String())
+
+
+class Periodicity(colander.TupleSchema):
+    periodicity_acronym = colander.SchemaNode(colander.String())
+    descriptor = colander.SchemaNode(colander.String())
+
+
+class Permissions(colander.MappingSchema):
+    id = colander.SchemaNode(colander.String())
+    url = colander.SchemaNode(colander.url())
+    text = colander.SchemaNode(colander.String())
+
+
+class PublisherCountry(colander.TupleSchema):
+    country_iso = colander.SchemaNode(colander.String())
+    country_name = colander.SchemaNode(colander.String())
+
+
+class PublisherName(colander.SequenceSchema):
+    publisher_name = colander.SchemaNode(colander.String())
+
+
+class Sponsors(colander.SequenceSchema):
+    sponsor = colander.SchemaNode(colander.String())
+
+
+class SubjectAreas(colander.SequenceSchema):
+    subject_area = colander.SchemaNode(colander.String())
+
+
+class DoajApc(colander.MappingSchema):
+    currency = colander.SchemaNode(colander.String())
+    average_price = colander.SchemaNode(colander.Int())
+
+
+class DoajAuthorCopyright(colander.MappingSchema):
+    url = colander.SchemaNode(colander.url())
+    copyright = colander.SchemaNode(colander.String())
+
+
+class Doaj(colander.MappingSchema):
+    apc = DoajApc()
+    apc = colander.SchemaNode(colander.url())
+    author_copyright = DoajAuthorCopyright()
+    author_pays = colander.SchemaNode(
+        colander.String(),
+        validator=colander.OneOf(['N', 'NY']))
+
+
+class Journal(colander.MappingSchema):
+    scielo_issn = colander.SchemaNode(colander.String())
+    print_issn = colander.SchemaNode(colander.String())
+    electronic_issn = colander.SchemaNode(colander.String())
+    other_issns = OtherIssns()
+    title = colander.SchemaNode(colander.String())
+    fulltitle = colander.SchemaNode(colander.String())
+    previous_title = colander.SchemaNode(colander.String())
+    next_title = colander.SchemaNode(colander.String())
+    title_nlm = colander.SchemaNode(colander.String())
+    abbreviated_iso_title = colander.SchemaNode(colander.String())
+    abbreviated_title = colander.SchemaNode(colander.String())
+    abstract_languages = AbstractLanguages()
+    acronym = colander.SchemaNode(colander.String())
+    collection_acronym = colander.SchemaNode(colander.String())
+    controlled_vocabulary = ControlledVocabulary()
+    copyright = colander.SchemaNode(colander.String())
+    creation_date = colander.SchemaNode(colander.Date)
+    current_status = colander.SchemaNode(colander.String())
+    editor_address = colander.SchemaNode(colander.String())
+    editor_email = colander.SchemaNode(colander.Email())
+    name_of_chief_editor = colander.SchemaNode(colander.String())
+    email_of_chief_editor = colander.SchemaNode(colander.Email())
+    editorial_standard = EditorialStandard()
+    first_number = colander.NoneAcceptantNode(colander.Int())
+    first_volume = colander.NoneAcceptantNode(colander.Int())
+    first_year = colander.NoneAcceptantNode(colander.Int())
+    index_coverage = IndexCoverage()
+    wos_citations_indexes = WosIndexes()
+    wos_subjects_areas = WosSubjectsAreas()
+    is_indexed_in_scopus = colander.SchemaNode(colander.Boolean())
+    is_indexed_in_pubmed = colander.SchemaNode(colander.Boolean())
+    is_indexed_in_pmc = colander.SchemaNode(colander.Boolean())
+    is_indexed_in_google_scholar = colander.SchemaNode(colander.Boolean())
+    # Instructions to autors
+    accepts_preprint = colander.SchemaNode(colander.Boolean())
+    guides_data_referencing = colander.SchemaNode(colander.Boolean())
+    apc_charges = colander.SchemaNode(colander.Boolean())
+    apc_valeu1 = colander.SchemaNode(colander.Float())
+    apc_value2 = colander.SchemaNode(colander.Float())
+
+    is_publishing_model_continuous = colander.SchemaNode(colander.Boolean())
+    languages = Languages()
+    # Mission
+    mission = Mission()
+    periodicity = Periodicity()
+    periodicity_in_months = colander.SchemaNode(
+        colander.Int(),
+        validator=colander.Range(1, 12))  # undefined ?
+    permissions = Permissions()
+    publisher_city = colander.SchemaNode(colander.String())
+    publisher_country = PublisherCountry()
+    publisher_address = colander.SchemaNode(colander.String())
+    publisher_name = PublisherName()
+    publisher_state = colander.SchemaNode(colander.String())
+    publisher_model = colander.SchemaNode(
+        colander.String,
+        validator=colander.OneOf(['regular', 'continuos']))
+    scimago_code = colander.NoneAcceptantNode(colander.String())
+    sponsors = Sponsors()
+    subject_areas = SubjectAreas()
+    submission_url = colander.NoneAcceptantNode(colander.url())
+
+    doaj = Doaj()
