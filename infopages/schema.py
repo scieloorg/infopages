@@ -87,6 +87,30 @@ class DoajAuthorCopyright(colander.MappingSchema):
     copyright = colander.SchemaNode(colander.String())
 
 
+class DoajAuthorPublishingRights(colander.MappingSchema):
+    publishing_rights = colander.SchemaNode(colander.Boolean())
+    url = colander.SchemaNode(colander.url())
+
+
+class DoajDepositPolicy(colander.SequenceSchema):
+    deposit_policy = colander.SchemaNode(colander.String())
+
+
+class DoajEditorialReview(colander.MappingSchema):
+    process = colander.SchemaNode(colander.String())
+    url = colander.SchemaNode(colander.url())
+
+
+class DoajPlagiarismDetection(colander.MappingSchema):
+    detection = colander.SchemaNode(colander.Boolean())
+    url = colander.SchemaNode(colander.url())
+
+
+class DoajSubmissionsCharges(colander.MappingSchema):
+    currency = colander.SchemaNode(colander.String())
+    average_price = colander.SchemaNode(colander.Int())
+
+
 class Doaj(colander.MappingSchema):
     apc = DoajApc()
     apc = colander.SchemaNode(colander.url())
@@ -94,6 +118,13 @@ class Doaj(colander.MappingSchema):
     author_pays = colander.SchemaNode(
         colander.String(),
         validator=colander.OneOf(['N', 'NY']))
+    author_pays_url = colander.SchemaNode(colander.url())
+    author_publishing_rights = DoajAuthorPublishingRights()
+    deposit_policy = DoajDepositPolicy()
+    editorial_review = DoajEditorialReview()
+    plagiarism_detection = DoajPlagiarismDetection()
+    submissions_charges = DoajSubmissionsCharges()
+    submissions_charges_url = colander.SchemaNode(colander.url())
 
 
 class Journal(colander.MappingSchema):
@@ -158,5 +189,6 @@ class Journal(colander.MappingSchema):
     sponsors = Sponsors()
     subject_areas = SubjectAreas()
     submission_url = colander.NoneAcceptantNode(colander.url())
+    doi_provider = colander.SchemaNode(colander.String())
 
     doaj = Doaj()
