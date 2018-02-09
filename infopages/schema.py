@@ -25,7 +25,7 @@ class IndexCoverage(colander.SequenceSchema):
 
 
 class WosIndexes(colander.SequenceSchema):
-    wos_indexe = colander.SchemaNode(colander.String())
+    wos_citation_index = colander.SchemaNode(colander.String())
 
 
 class WosSubjectsAreas(colander.SequenceSchema):
@@ -34,13 +34,6 @@ class WosSubjectsAreas(colander.SequenceSchema):
 
 class Languages(colander.SequenceSchema):
     language = colander.SchemaNode(colander.String())
-
-
-# class Mission(colander.MappingSchema):
-#     language = colander.SchemaNode(
-#         colander.String(),
-#         validator=colander.OneOf(['pt', 'en', 'es']))
-#     descriptor = colander.SchemaNode(colander.String())
 
 
 class Mission(colander.MappingSchema):
@@ -77,14 +70,19 @@ class SubjectAreas(colander.SequenceSchema):
     subject_area = colander.SchemaNode(colander.String())
 
 
+class DoiProvider(colander.MappingSchema):
+    prefix = colander.SchemaNode(colander.String())
+    publisher = colander.SchemaNode(colander.String())
+
+
 class DoajApc(colander.MappingSchema):
     currency = colander.SchemaNode(colander.String())
     average_price = colander.SchemaNode(colander.Int())
 
 
 class DoajAuthorCopyright(colander.MappingSchema):
+    copyright = colander.SchemaNode(colander.Boolean())
     url = colander.SchemaNode(colander.url())
-    copyright = colander.SchemaNode(colander.String())
 
 
 class DoajAuthorPublishingRights(colander.MappingSchema):
@@ -112,7 +110,6 @@ class DoajSubmissionsCharges(colander.MappingSchema):
 
 
 class Doaj(colander.MappingSchema):
-    apc = DoajApc()
     apc = colander.SchemaNode(colander.url())
     author_copyright = DoajAuthorCopyright()
     author_pays = colander.SchemaNode(
@@ -123,6 +120,7 @@ class Doaj(colander.MappingSchema):
     deposit_policy = DoajDepositPolicy()
     editorial_review = DoajEditorialReview()
     plagiarism_detection = DoajPlagiarismDetection()
+    query_url = colander.SchemaNode(colander.url())
     submissions_charges = DoajSubmissionsCharges()
     submissions_charges_url = colander.SchemaNode(colander.url())
 
@@ -135,10 +133,12 @@ class Journal(colander.MappingSchema):
     title = colander.SchemaNode(colander.String())
     fulltitle = colander.SchemaNode(colander.String())
     previous_title = colander.SchemaNode(colander.String())
+
     next_title = colander.SchemaNode(colander.String())
+
     title_nlm = colander.SchemaNode(colander.String())
     abbreviated_iso_title = colander.SchemaNode(colander.String())
-    abbreviated_title = colander.SchemaNode(colander.String())
+    abbreviated_issn_title = colander.SchemaNode(colander.String())
     abstract_languages = AbstractLanguages()
     acronym = colander.SchemaNode(colander.String())
     collection_acronym = colander.SchemaNode(colander.String())
@@ -146,8 +146,7 @@ class Journal(colander.MappingSchema):
     copyright = colander.SchemaNode(colander.String())
     creation_date = colander.SchemaNode(colander.Date)
     current_status = colander.SchemaNode(colander.String())
-    editor_address = colander.SchemaNode(colander.String())
-    editor_email = colander.SchemaNode(colander.Email())
+    journal_email = colander.SchemaNode(colander.Email())
     name_of_chief_editor = colander.SchemaNode(colander.String())
     email_of_chief_editor = colander.SchemaNode(colander.Email())
     editorial_standard = EditorialStandard()
@@ -161,6 +160,7 @@ class Journal(colander.MappingSchema):
     is_indexed_in_pubmed = colander.SchemaNode(colander.Boolean())
     is_indexed_in_pmc = colander.SchemaNode(colander.Boolean())
     is_indexed_in_google_scholar = colander.SchemaNode(colander.Boolean())
+
     # Instructions to autors
     accepts_preprint = colander.SchemaNode(colander.Boolean())
     guides_data_referencing = colander.SchemaNode(colander.Boolean())
@@ -170,7 +170,6 @@ class Journal(colander.MappingSchema):
 
     is_publishing_model_continuous = colander.SchemaNode(colander.Boolean())
     languages = Languages()
-    # Mission
     mission = Mission()
     periodicity = Periodicity()
     periodicity_in_months = colander.SchemaNode(
@@ -189,6 +188,7 @@ class Journal(colander.MappingSchema):
     sponsors = Sponsors()
     subject_areas = SubjectAreas()
     submission_url = colander.NoneAcceptantNode(colander.url())
-    doi_provider = colander.SchemaNode(colander.String())
+    doi_provider = DoiProvider()
 
+    # DOAJ
     doaj = Doaj()
