@@ -6,6 +6,24 @@ class OtherIssns(colander.SequenceSchema):
     other_issn = colander.SchemaNode(colander.String())
 
 
+class Title(colander.MappingSchema):
+    title = colander.SchemaNode(colander.String())
+    initial_year = colander.SchemaNode(colander.String())
+    final_year = colander.SchemaNode(colander.String())
+
+
+class PreviousTitle(colander.MappingSchema):
+    previous_title = colander.SchemaNode(colander.String())
+    initial_year = colander.SchemaNode(colander.String())
+    final_year = colander.SchemaNode(colander.String())
+
+
+class NextTitle(colander.MappingSchema):
+    next_title = colander.SchemaNode(colander.String())
+    initial_year = colander.SchemaNode(colander.String())
+    final_year = colander.SchemaNode(colander.String())
+
+
 class AbstractLanguages(colander.SequenceSchema):
     abstract_languages = colander.SchemaNode(colander.String())
 
@@ -130,12 +148,10 @@ class Journal(colander.MappingSchema):
     print_issn = colander.SchemaNode(colander.String())
     electronic_issn = colander.SchemaNode(colander.String())
     other_issns = OtherIssns()
-    title = colander.SchemaNode(colander.String())
+    title = Title()
     fulltitle = colander.SchemaNode(colander.String())
-    previous_title = colander.SchemaNode(colander.String())
-
-    next_title = colander.SchemaNode(colander.String())
-
+    previous_title = PreviousTitle()
+    next_title = NextTitle()
     title_nlm = colander.SchemaNode(colander.String())
     abbreviated_iso_title = colander.SchemaNode(colander.String())
     abbreviated_issn_title = colander.SchemaNode(colander.String())
