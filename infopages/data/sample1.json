@@ -1,0 +1,130 @@
+{
+    "abstract_languages" : [ 
+        "de", 
+        "fr", 
+        "en", 
+        "pt"
+    ],
+    "print_issn" : "0074-0276",
+    "publisher_name" : [ 
+        "Instituto Oswaldo Cruz, Ministério da Saúde"
+    ],
+    "abbreviated_iso_title" : "Mem. Inst. Oswaldo Cruz",
+    "subject_areas" : [ 
+        "Biological Sciences", 
+        "Health Sciences"
+    ],
+    "periodicity" : [ 
+        "M", 
+        "Monthly"
+    ],
+    "submission_url" : "http://mc04.manuscriptcentral.com/mioc-scielo",
+    "index_coverage" : [ 
+        "Biological Abstracts", 
+        "Current Contents - life science", 
+        "Entomology Abstracts", 
+        "Excerpta medica", 
+        "helminthological abstracts", 
+        "Index medicus", 
+        "Index medicus latino-americano", 
+        "LILACS", 
+        "Microbiology abstracts", 
+        "Protozoology abstracts", 
+        "Review of applied entomology", 
+        "Science citation index", 
+        "Tropical diseases bulletin", 
+        "Zoological abstracts", 
+        "LILACS", 
+        "ISI", 
+        "PubMed"
+    ],
+    "publisher_state" : "RJ",
+    "controlled_vocabulary" : [ 
+        "nd", 
+        "No Descriptor"
+    ],
+    "first_year" : "1909",
+    "current_status" : "current",
+    "title_nlm" : "Mem Inst Oswaldo Cruz",
+    "wos_subject_areas" : [ 
+        "PARASITOLOGY", 
+        "TROPICAL MEDICINE"
+    ],
+    "publishing_model" : "continuous",
+    "creation_date" : "1997-04-24",
+    "doaj" : {
+        "author_publishing_rights" : {
+            "url" : "",
+            "publishing_rights" : "False"
+        },
+        "editorial_review" : {
+            "url" : "http://www.scielo.br/revistas/mioc/iinstruc.htm",
+            "process" : "Peer review"
+        },
+        "apc_url" : "http://www.scielo.br/revistas/mioc/isubscrp.htm",
+        "author_copyright" : {
+            "copyright" : "False",
+            "url" : ""
+        },
+        "submission_charges_url" : "http://www.scielo.br/revistas/mioc/isubscrp.htm",
+        "query_url" : "https://doaj.org/api/v1/search/journals/issn:0074-0276",
+        "plagiarism_detection" : {
+            "detection" : true,
+            "url" : "http://www.scielo.br/revistas/mioc/iinstruc.htm"
+        }
+    },
+    "first_volume" : "1",
+    "languages" : [ 
+        "de", 
+        "fr", 
+        "en", 
+        "pt"
+    ],
+    "journal_email" : "memorias@fiocruz.br",
+    "publisher_address" : "Av. Brasil, 4365 -  Pavilhão Mourisco, Manguinhos, 21040-900 Rio de Janeiro RJ Brazil, Tel.: (55 21) 2562-1222, Fax: (55 21) 2562 1220",
+    "is_indexed_in_scopus" : true,
+    "acronym" : "mioc",
+    "electronic_issn" : "1678-8060",
+    "collection_acronym" : "scl",
+    "publisher_country" : [ 
+        "BR", 
+        "Brazil"
+    ],
+    "editorial_standard" : [ 
+        "other", 
+        "other standard"
+    ],
+    "mission" : {
+        "pt" : "A revista publica contribuições originais de cientistas e pesquisadores de todo o mundo nas áreas de parasitologia, microbiologia, medicina tropical, assim como estudos básicos em bioquímica, imunologia, biologia celular e molecular, fisiologia e genética relacionados com essas áreas",
+        "en" : "The journal publishes original contributions from research scientists throughout the world, in the fields of parasitology, microbiology, tropical medicine as well as basic studies in immunology molecular and cell biology related to these fields",
+        "es" : "La revista publica contribuciones originales de investigadores de todo el mundo en las áreas de parasitología, microbiología, medicina tropical, así como estudios básicos en bioquímica, inmunología, biología celular y molecular, fisiología, y genética relacionados con esas áreas"
+    },
+    "first_number" : "1",
+    "abbreviated_issn_title" : "Mem. Inst. Oswaldo Cruz",
+    "is_publishing_model_continuous" : true,
+    "copyrighter" : "Fundação Oswaldo Cruz",
+    "permissions" : {
+        "id" : "by/4.0",
+        "url" : "http://creativecommons.org/licenses/by/4.0/",
+        "text" : "This work is licensed under a Creative Commons Attribution 4.0 International License."
+    },
+    "doi_provider" : {
+        "prefix" : "10.1590",
+        "publisher" : "FapUNIFESP (SciELO)"
+    },
+    "periodicity_in_months" : "12",
+    "previous_title" : {
+        "previous_title" : null
+    },
+    "scimago_code" : "15205",
+    "fulltitle" : "Memórias do Instituto Oswaldo Cruz",
+    "wos_citation_indexes" : [ 
+        "SCIE"
+    ],
+    "title" : {
+        "initial_year" : "19970424",
+        "title" : "Memórias do Instituto Oswaldo Cruz"
+    },
+    "scielo_issn" : "0074-0276",
+    "publisher_city" : "Rio de Janeiro"
+}

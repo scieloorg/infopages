@@ -1,0 +1,101 @@
+{
+    "abstract_languages" : [ 
+        "es", 
+        "en", 
+        "pt"
+    ],
+    "print_issn" : "1516-9332",
+    "publisher_name" : [ 
+        "Divisão de Biblioteca e Documentação do Conjunto das Químicas da Universidade de São Paulo"
+    ],
+    "abbreviated_iso_title" : "Rev. Bras. Cienc. Farm",
+    "subject_areas" : [ 
+        "Health Sciences"
+    ],
+    "index_coverage" : [ 
+        "Analytical Abstracts - Coden AABSAR.", 
+        "Chemical Abstracts - Coden CHABAB.", 
+        "Excerpta Médica - EMSCE", 
+        "International Pharmaceutical Abstracts - IPA.", 
+        "Literatura Latino-Americana e do Caribe em Ciências da Saúde - Lilacs", 
+        "Nutrition Abstracts and Reviews - CAB International", 
+        "ISI"
+    ],
+    "publisher_state" : "SP",
+    "controlled_vocabulary" : [ 
+        "nd", 
+        "No Descriptor"
+    ],
+    "first_year" : "1999",
+    "current_status" : "deceased",
+    "publishing_model" : "regular",
+    "creation_date" : "2005-11-23",
+    "doaj" : {
+        "author_pays_url" : "http://www.scielo.br/revistas/rbcf/iinstruc.htm",
+        "author_pays" : "N",
+        "query_url" : "https://doaj.org/api/v1/search/journals/issn:1516-9332"
+    },
+    "next_title" : {
+        "next_title" : "Brazilian Journal of Pharmaceutical Sciences",
+        "initial_year" : "20090900"
+    },
+    "first_volume" : "35",
+    "languages" : [ 
+        "es", 
+        "en", 
+        "pt"
+    ],
+    "journal_email" : "bjps@usp.br",
+    "periodicity" : [ 
+        "Q", 
+        "Quarterly"
+    ],
+    "first_number" : "1",
+    "is_indexed_in_scopus" : true,
+    "acronym" : "rbcf",
+    "collection_acronym" : "scl",
+    "scielo_issn" : "1516-9332",
+    "publisher_country" : [ 
+        "BR", 
+        "Brazil"
+    ],
+    "editorial_standard" : [ 
+        "nbr6023", 
+        "nbr 6023/89 - associação nacional"
+    ],
+    "mission" : {
+        "pt" : "Divulgar os mais recentes avanços da área das Ciências Farmacêuticas, através da publicação de artigos originais, notas prévias, trabalhos de revisão e resenhas.",
+        "es" : "Divulgar los más recientes avanzos en la area de las Ciencias Farmacéuticas publicando trabajos originales o de revisión."
+    },
+    "publisher_address" : "Av. Prof. Lineu Prestes, 950, Caixa Postal 66083, 05315-970 - São Paulo - SP - Brasil, Tel.: (011) 3091.3804, Fax: (011) 3097.8627",
+    "abbreviated_issn_title" : "Rev. Bras. Cienc. Farm.",
+    "sponsors" : [ 
+        "Comissão de Credenciamento das Publicações Científicas da  Universidade de São Paulo", 
+        "Cnpq"
+    ],
+    "is_publishing_model_continuous" : false,
+    "permissions" : {
+        "id" : "by-nc/4.0",
+        "url" : "http://creativecommons.org/licenses/by-nc/4.0/",
+        "text" : "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
+    },
+    "doi_provider" : {
+        "prefix" : "10.1590",
+        "publisher" : "FapUNIFESP (SciELO)"
+    },
+    "periodicity_in_months" : "4",
+    "previous_title" : {
+        "previous_title" : "Revista de Farmácia e Bioquímica da Universidade de São Paulo"
+    },
+    "fulltitle" : "Revista Brasileira de Ciências Farmacêuticas",
+    "copyrighter" : "Revista Brasileira de Ciências Farmacêuticas",
+    "title" : {
+        "initial_year" : "20051123",
+        "title" : "Revista Brasileira de Ciências Farmacêuticas",
+        "final_year" : "20090915"
+    },
+    "wos_subject_areas" : [ 
+        "PHARMACOLOGY & PHARMACY"
+    ],
+    "publisher_city" : "São Paulo"
+}
