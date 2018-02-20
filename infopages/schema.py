@@ -39,7 +39,7 @@ class EditorialStandard(colander.TupleSchema):
 
 
 class IndexCoverage(colander.SequenceSchema):
-    index_coverage = colander.NoneAcceptantNode(colander.String())
+    index_coverage = colander.SchemaNode(colander.String())
 
 
 class WosIndexes(colander.SequenceSchema):
@@ -67,7 +67,7 @@ class Periodicity(colander.TupleSchema):
 
 class Permissions(colander.MappingSchema):
     id = colander.SchemaNode(colander.String())
-    url = colander.SchemaNode(colander.url())
+    url = colander.SchemaNode(colander.String(), validator=colander.url)
     text = colander.SchemaNode(colander.String())
 
 
@@ -100,12 +100,12 @@ class DoajApc(colander.MappingSchema):
 
 class DoajAuthorCopyright(colander.MappingSchema):
     copyright = colander.SchemaNode(colander.Boolean())
-    url = colander.SchemaNode(colander.url())
+    url = colander.SchemaNode(colander.String(), validator=colander.url)
 
 
 class DoajAuthorPublishingRights(colander.MappingSchema):
     publishing_rights = colander.SchemaNode(colander.Boolean())
-    url = colander.SchemaNode(colander.url())
+    url = colander.SchemaNode(colander.String(), validator=colander.url)
 
 
 class DoajDepositPolicy(colander.SequenceSchema):
@@ -114,12 +114,12 @@ class DoajDepositPolicy(colander.SequenceSchema):
 
 class DoajEditorialReview(colander.MappingSchema):
     process = colander.SchemaNode(colander.String())
-    url = colander.SchemaNode(colander.url())
+    url = colander.SchemaNode(colander.String(), validator=colander.url)
 
 
 class DoajPlagiarismDetection(colander.MappingSchema):
     detection = colander.SchemaNode(colander.Boolean())
-    url = colander.SchemaNode(colander.url())
+    url = colander.SchemaNode(colander.String(), validator=colander.url)
 
 
 class DoajSubmissionsCharges(colander.MappingSchema):
@@ -128,19 +128,25 @@ class DoajSubmissionsCharges(colander.MappingSchema):
 
 
 class Doaj(colander.MappingSchema):
-    apc = colander.SchemaNode(colander.url())
+    apc = colander.SchemaNode(colander.String())
     author_copyright = DoajAuthorCopyright()
     author_pays = colander.SchemaNode(
+       colander.String(),
+       validator=colander.OneOf(['N', 'NY']))
+    author_pays_url = colander.SchemaNode(
         colander.String(),
-        validator=colander.OneOf(['N', 'NY']))
-    author_pays_url = colander.SchemaNode(colander.url())
+        validator=colander.url)
     author_publishing_rights = DoajAuthorPublishingRights()
     deposit_policy = DoajDepositPolicy()
     editorial_review = DoajEditorialReview()
     plagiarism_detection = DoajPlagiarismDetection()
-    query_url = colander.SchemaNode(colander.url())
+    query_url = colander.SchemaNode(
+        colander.String(),
+        validator=colander.url)
     submissions_charges = DoajSubmissionsCharges()
-    submissions_charges_url = colander.SchemaNode(colander.url())
+    submissions_charges_url = colander.SchemaNode(
+        colander.String(),
+        validator=colander.url)
 
 
 class Journal(colander.MappingSchema):
@@ -160,15 +166,19 @@ class Journal(colander.MappingSchema):
     collection_acronym = colander.SchemaNode(colander.String())
     controlled_vocabulary = ControlledVocabulary()
     copyright = colander.SchemaNode(colander.String())
-    creation_date = colander.SchemaNode(colander.Date)
+    creation_date = colander.SchemaNode(colander.Date())
     current_status = colander.SchemaNode(colander.String())
-    journal_email = colander.SchemaNode(colander.Email())
+    journal_email = colander.SchemaNode(
+        colander.String(),
+        validator=colander.Email())
     name_of_chief_editor = colander.SchemaNode(colander.String())
-    email_of_chief_editor = colander.SchemaNode(colander.Email())
+    email_of_chief_editor = colander.SchemaNode(
+        colander.String(),
+        validator=colander.Email())
     editorial_standard = EditorialStandard()
-    first_number = colander.NoneAcceptantNode(colander.Int())
-    first_volume = colander.NoneAcceptantNode(colander.Int())
-    first_year = colander.NoneAcceptantNode(colander.Int())
+    first_number = colander.SchemaNode(colander.Int())
+    first_volume = colander.SchemaNode(colander.Int())
+    first_year = colander.SchemaNode(colander.Int())
     index_coverage = IndexCoverage()
     wos_citations_indexes = WosIndexes()
     wos_subjects_areas = WosSubjectsAreas()
@@ -189,8 +199,8 @@ class Journal(colander.MappingSchema):
     mission = Mission()
     periodicity = Periodicity()
     periodicity_in_months = colander.SchemaNode(
-        colander.Int(),
-        validator=colander.Range(1, 12))  # undefined ?
+         colander.Int(),
+         validator=colander.Range(1, 12))  # undefined ?
     permissions = Permissions()
     publisher_city = colander.SchemaNode(colander.String())
     publisher_country = PublisherCountry()
@@ -198,13 +208,17 @@ class Journal(colander.MappingSchema):
     publisher_name = PublisherName()
     publisher_state = colander.SchemaNode(colander.String())
     publisher_model = colander.SchemaNode(
-        colander.String,
+        colander.String(),
         validator=colander.OneOf(['regular', 'continuos']))
-    scimago_code = colander.NoneAcceptantNode(colander.String())
+    scimago_code = colander.SchemaNode(colander.String())
     sponsors = Sponsors()
     subject_areas = SubjectAreas()
-    submission_url = colander.NoneAcceptantNode(colander.url())
+    submission_url = colander.SchemaNode(
+        colander.String(),
+        validator=colander.url)
     doi_provider = DoiProvider()
 
     # DOAJ
     doaj = Doaj()
+
+schema = Journal()
