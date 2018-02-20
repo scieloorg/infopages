@@ -166,7 +166,7 @@ class Journal(colander.MappingSchema):
     collection_acronym = colander.SchemaNode(colander.String())
     controlled_vocabulary = ControlledVocabulary()
     copyright = colander.SchemaNode(colander.String())
-    creation_date = colander.SchemaNode(colander.Date())
+    creation_date = colander.SchemaNode(colander.String())
     current_status = colander.SchemaNode(colander.String())
     journal_email = colander.SchemaNode(
         colander.String(),
